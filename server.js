@@ -121,11 +121,7 @@ app.get('/login-callback', (req, res) => {
         // Otherwise proceed, get tokens and save auth client and user details
         const code = req.query.code;
         const oAuth2Client = newOAuth2Client();
-        oAuth2Client.getToken(code, (err, tokens) => {
-            if (err) {
-                console.error(`OAuth2 failed: ${err}`);
-                return res.redirect(`/error`);
-            }
+        oAuth2Client.getToken(code, (err, tokens) =>
 
             // store access and refresh tokens in session
             req.session.tokens = tokens;
