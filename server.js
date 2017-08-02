@@ -116,12 +116,12 @@ app.get('/login', (req, res) => {
 
 // Accept authorisation code from Google
 app.get('/login-callback', (req, res) => {
-    unlessLoggedIn(req, res, () => 
+    unlessLoggedIn(req, res, () => {
 
         // Otherwise proceed, get tokens and save auth client and user details
         const code = req.query.code;
         const oAuth2Client = newOAuth2Client();
-        oAuth2Client.getToken(code, (err, tokens) =>
+        oAuth2Client.getToken(code, (err, tokens) => }
 
             // store access and refresh tokens in session
             req.session.tokens = tokens;
