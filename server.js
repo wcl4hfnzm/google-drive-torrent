@@ -116,7 +116,7 @@ app.get('/login', (req, res) => {
 
 // Accept authorisation code from Google
 app.get('/login-callback', (req, res) => {
-    unlessLoggedIn(req, res, () => }
+    unlessLoggedIn(req, res, () => 
 
         // Otherwise proceed, get tokens and save auth client and user details
         const code = req.query.code;
